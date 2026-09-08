@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Portfolio GitHub Pages</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 { color: #2c3e50; font-size: 1.5rem; }
+        .clock { font-size: 1.2rem; font-weight: bold; color: #007bff; margin: 1rem 0; }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        button:hover { background-color: #218838; }
+        .counter { margin-top: 1rem; font-size: 0.9rem; color: #6c757d; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Test GitHub Pages</h1>
+        <p>Se vedi questa pagina, la pubblicazione è andata a buon fine!</p>
+        
+        <div class="clock" id="time">Caricamento ora...</div>
+        
+        <button onclick="incrementCounter()">Clicca per testare il JS</button>
+        <div class="counter">Click ricevuti: <span id="clicks">0</span></div>
+    </div>
+
+    <script>
+        // Funzione per aggiornare l'ora dinamica
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time').innerText = now.toLocaleTimeString('it-IT');
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Funzione per il contatore interattivo
+        let count = 0;
+        function incrementCounter() {
+            count++;
+            document.getElementById('clicks').innerText = count;
+        }
+    </script>
+
+</body>
+</html>
